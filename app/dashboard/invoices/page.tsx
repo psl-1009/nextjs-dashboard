@@ -1,4 +1,3 @@
-import Pagination from '@/app/ui/invoices/pagination';
 import Search from '@/app/ui/search';
 import Table from '@/app/ui/invoices/table';
 import { CreateInvoice } from '@/app/ui/invoices/buttons';
@@ -7,6 +6,7 @@ import { Suspense } from 'react';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { fetchInvoicesPages } from '@/app/lib/data';
 import { Metadata } from 'next';
+import Pagination from '@/app/ui/invoices/pagination';
 
 export const metadata: Metadata = {
   title: 'Invoices',
@@ -38,7 +38,7 @@ export default async function Page({
         <Table query={query} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
-      {/* <Pagination totalPages={totalPages} /> */}
+      <Pagination totalPages={totalPages} />
       </div>
     </div>
   );
